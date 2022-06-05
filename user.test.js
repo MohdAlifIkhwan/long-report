@@ -26,7 +26,7 @@ describe("User Account Management", () => {
 	// })
 
 	//test("User login invalid username", async () => {
-//		const res = await User.login("nizam11", "test1")
+//		const res = await User.login("test", "test1")
 //		expect(res).toBe(null)
 //	})
 
