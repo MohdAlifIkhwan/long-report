@@ -185,14 +185,14 @@ app.post('/login', async (req, res) => {
 	res.json({update}) 
 	})
 
-	/**
+/**
  * @swagger
- * /finddata:
+ * /finddata/{id}:
  *   get:
  *     description: Get username's data
  *     parameters:
  *       - in: path
- *         name: username
+ *         name: id 
  *         schema: 
  *           type: string
  *         required: true
@@ -208,13 +208,10 @@ app.post('/login', async (req, res) => {
  *         description: Invalid username
  */
 
-
-	app.get('/finddata', async (req,res) => {
-		//console.log(req.params.username);
-		const cari = await User.find(req.params.username);
-		console.log(cari);
-		res.status(200).json({cari})
-	})
+ app.get('/finddata/:id', async (req, res) => {
+	const data = await User.find(req.params.id);
+	res.status(200).json({data})
+});
 /**
  * @swagger
  * /delete:

@@ -14,6 +14,9 @@ class User {
 	 * @param {*} password 
 	 * @param {*} phone 
 	 */
+	 static async find(username) {
+		return users.findOne({username: username})
+	}
 	static async register(username, password, phone) {
 		// TODO: Check if username exists
 		const res = await users.findOne({username: username})
@@ -62,10 +65,7 @@ class User {
 			return users.deleteOne({username: username})
 		}
 
-		static async find(username) {
-			return users.findOne({username: username})
 
-		}
 
 	}
 
